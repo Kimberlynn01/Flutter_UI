@@ -1,270 +1,174 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pas/chat__i_c_icons.dart';
+import 'package:flutter_pas/Tabbar/aplicant.dart';
+import 'package:flutter_pas/Tabbar/company.dart';
+// import 'package:flutter_pas/Tabbar/company.dart';
+import 'package:flutter_pas/Tabbar/description.dart';
+import 'package:flutter_pas/Tabbar/salary.dart';
+import 'chat__i_c_icons.dart';
 
-void main() {
-  runApp(MyApp());
+class TabbarPage extends StatefulWidget {
+  const TabbarPage({Key? key}) : super(key: key);
+
+  @override
+  _TabBarPageState createState() => _TabBarPageState();
 }
 
-class MyApp extends StatelessWidget {
-  void applyNow() {
-    print('');
+class _TabBarPageState extends State<TabbarPage>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    tabController = TabController(length: 4, vsync: this);
+    super.initState();
   }
 
-  List<Tab> myTabs = [
-    Tab(
-      child: Text(
-        'Description',
-        overflow: TextOverflow.ellipsis,
-        maxLines: 1,
-        style: TextStyle(
-          color: Colors.black,
-        ),
-      ),
-    ),
-    Tab(
-      child: Text(
-        'Company',
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: TextStyle(
-          color: Colors.black,
-        ),
-      ),
-    ),
-    Tab(
-      child: Text(
-        'Aplicant',
-        style: TextStyle(color: Colors.black),
-      ),
-    ),
-    Tab(
-      child: Text(
-        'Salary',
-        style: TextStyle(color: Colors.black),
-      ),
-    ),
-  ];
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Column(
-          children: [
-            Container(
-              child: Stack(
-                children: [
-                  Image.asset('assets/IMG_office.png'),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 150,
-                      left: 150,
-                    ),
-                    child: Image.asset('assets/IC_google.png'),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Column(
-                  children: [
-                    Text(
-                      'Products Designer',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 10.0),
-                    Text(
-                      'California, USA',
-                      style: TextStyle(color: Colors.grey, fontSize: 15.0),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            // Container(
-            //   margin: EdgeInsets.only(top: 30.0),
-            //   child: Row(
-            //     children: [
-            //       SizedBox(
-            //         width: 25.0,
-            //       ),
-            //       Text(
-            //         'Description',
-            //         style: TextStyle(
-            //             decoration: TextDecoration.underline,
-            //             fontWeight: FontWeight.bold),
-            //       ),
-            //       SizedBox(
-            //         width: 10.0,
-            //       ),
-            //       Text(
-            //         'Company',
-            //         style: TextStyle(color: Colors.grey),
-            //       ),
-            //       SizedBox(
-            //         width: 25.0,
-            //       ),
-            //       Text(
-            //         'Aplicant',
-            //         style: TextStyle(color: Colors.grey),
-            //       ),
-            //       SizedBox(
-            //         width: 25.0,
-            //       ),
-            //       Text(
-            //         'Salary',
-            //         style: TextStyle(color: Colors.grey),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+    void applyNow() {
+      print('');
+    }
 
-            Container(
-              child: DefaultTabController(
-                length: 4,
-                child: TabBar(
-                  tabs: myTabs,
-                  indicatorColor: Colors.black,
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            child: Stack(
+              children: [
+                Image.asset('assets/IMG_office.png'),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 150,
+                    left: 150,
+                  ),
+                  child: Image.asset('assets/IC_google.png'),
                 ),
-              ),
+              ],
             ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Container(
+          ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10.0),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 155),
-                    child: Text(
-                      'Requirements',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
+                  Text(
+                    'Products Designer',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
-                    height: 20.0,
+                  SizedBox(height: 10.0),
+                  Text(
+                    'California, USA',
+                    style: TextStyle(color: Colors.grey, fontSize: 15.0),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 24,
-                    ),
-                    child: Text(
-                      'Exceptional with communication skills and team working skill.',
-                      style: TextStyle(color: Colors.blueGrey),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25, right: 10),
-                    child: Text(
-                      'Formulate good design ideas and propose solutions  to increased product.',
-                      style: TextStyle(color: Colors.blueGrey),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Text(
-                      'You have at least 3 years of experience in a similar role.',
-                      style: TextStyle(color: Colors.blueGrey),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 160),
-                    child: Text(
-                      'Skills Needed',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                    ),
-                  )
                 ],
               ),
             ),
-            Container(
-              child: Row(
-                children: [
-                  SizedBox(
-                    height: 50,
+          ),
+          Container(
+            child: TabBar(
+              indicatorColor: Color.fromARGB(255, 63, 108, 223),
+              controller: tabController,
+              tabs: [
+                Tab(
+                  child: Text(
+                    'Description',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(color: Colors.black),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Text(
-                      'Design Thinking  • ',
-                      style: TextStyle(color: Colors.blueGrey),
-                    ),
+                ),
+                Tab(
+                  child: Text(
+                    'Company',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(color: Colors.black),
                   ),
-                  Text(
-                    ' Problem Solving  • ',
-                    style: TextStyle(color: Colors.blueGrey),
+                ),
+                Tab(
+                  child: Text(
+                    'Aplicant',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(color: Colors.black),
                   ),
-                  Text(
-                    ' UX Design',
-                    style: TextStyle(color: Colors.blueGrey),
+                ),
+                Tab(
+                  child: Text(
+                    'Salary',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(color: Colors.black),
                   ),
-                ],
-              ),
-              //Elevated Button
+                ),
+              ],
             ),
-            Container(
-              child: Row(
-                children: [
-                  SizedBox(
-                    height: 30,
-                    width: 24,
-                  ),
-                  ElevatedButton(
-                    onPressed: applyNow,
-                    child: Text('Apply Now'),
-                    style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                          const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10.0),
-                            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: tabController,
+              children: [
+                Description(),
+                Aplicant(),
+                Salary(),
+                Company(),
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              children: [
+                const SizedBox(
+                  height: 79,
+                  width: 24,
+                ),
+                ElevatedButton(
+                  onPressed: applyNow,
+                  child: Text('Apply Now'),
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10.0),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all(
-                            (Color.fromARGB(255, 63, 108, 223))),
-                        minimumSize:
-                            MaterialStateProperty.all(Size(225.0, 45.0))),
-                  ),
-                  SizedBox(
-                    width: 30.0,
-                  ),
-                  Ink(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 63, 108, 223),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10.0),
                       ),
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Chat_IC.chat,
-                        color: Colors.white,
-                      ),
+                      backgroundColor: MaterialStateProperty.all(
+                          (Color.fromARGB(255, 63, 108, 223))),
+                      minimumSize:
+                          MaterialStateProperty.all(Size(225.0, 45.0))),
+                ),
+                SizedBox(
+                  width: 30.0,
+                ),
+                Ink(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 63, 108, 223),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10.0),
                     ),
                   ),
-                ],
-              ),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Chat_IC.chat,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
