@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pas/Tabbar/aplicant.dart';
 import 'package:flutter_pas/Tabbar/company.dart';
-// import 'package:flutter_pas/Tabbar/company.dart';
 import 'package:flutter_pas/Tabbar/description.dart';
 import 'package:flutter_pas/Tabbar/salary.dart';
-import 'chat__i_c_icons.dart';
+import 'package:flutter_pas/icons_dart_icons.dart';
 
 class TabbarPage extends StatefulWidget {
   const TabbarPage({Key? key}) : super(key: key);
@@ -41,13 +40,13 @@ class _TabBarPageState extends State<TabbarPage>
           Container(
             child: Stack(
               children: [
-                Image.asset('assets/IMG_office.png'),
+                Image.asset('assets/images/IMG_office.png'),
                 Padding(
                   padding: const EdgeInsets.only(
-                    top: 150,
-                    left: 150,
+                    top: 170,
+                    left: 160,
                   ),
-                  child: Image.asset('assets/IC_google.png'),
+                  child: Image.asset('assets/images/IC_google.png'),
                 ),
               ],
             ),
@@ -59,18 +58,19 @@ class _TabBarPageState extends State<TabbarPage>
                 children: [
                   Text(
                     'Products Designer',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10.0),
                   Text(
                     'California, USA',
-                    style: TextStyle(color: Colors.grey, fontSize: 15.0),
+                    style: TextStyle(color: Colors.grey, fontSize: 16.0),
                   ),
                 ],
               ),
             ),
           ),
           Container(
+            padding: EdgeInsets.only(top: 20),
             child: TabBar(
               indicatorColor: Color.fromARGB(255, 63, 108, 223),
               controller: tabController,
@@ -128,12 +128,15 @@ class _TabBarPageState extends State<TabbarPage>
             child: Row(
               children: [
                 const SizedBox(
-                  height: 79,
-                  width: 24,
+                  height: 88,
+                  width: 20,
                 ),
                 ElevatedButton(
                   onPressed: applyNow,
-                  child: Text('Apply Now'),
+                  child: Text(
+                    'Apply Now',
+                    style: TextStyle(fontSize: 16),
+                  ),
                   style: ButtonStyle(
                       shape: MaterialStateProperty.all(
                         const RoundedRectangleBorder(
@@ -145,12 +148,14 @@ class _TabBarPageState extends State<TabbarPage>
                       backgroundColor: MaterialStateProperty.all(
                           (Color.fromARGB(255, 63, 108, 223))),
                       minimumSize:
-                          MaterialStateProperty.all(Size(225.0, 45.0))),
+                          MaterialStateProperty.all(Size(247.0, 50.0))),
                 ),
                 SizedBox(
-                  width: 30.0,
+                  width: 45.0,
                 ),
                 Ink(
+                  height: 50,
+                  width: 55,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 63, 108, 223),
                     borderRadius: BorderRadius.all(
@@ -160,8 +165,9 @@ class _TabBarPageState extends State<TabbarPage>
                   child: IconButton(
                     onPressed: () {},
                     icon: const Icon(
-                      Chat_IC.chat,
+                      IconsDart.chat,
                       color: Colors.white,
+                      size: 27,
                     ),
                   ),
                 ),

@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^2.0.0
+  curved_navigation_bar: ^1.0.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -61,6 +63,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/fonts/
+    - assets/images/
       # - assets/IC_message.ttf
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
@@ -77,9 +81,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Chat_IC
+    - family: IconsDart
       fonts:
-        - asset: assets/Chat_IC.ttf
+        - asset: assets/fonts/IconsDart.ttf  
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
